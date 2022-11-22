@@ -22,10 +22,10 @@ xyz <- make.xyz(lon, lat, gabri,gabri_2)
 
 library(maptools)
 data(wrld_simpl)
-plot(wrld_simpl, xlim= c(-10,50), ylim = (10,50))
+plot(wrld_simpl, xlim= c(-10,50), ylim = c(10,50))
 
 
 
-draw.pie(xyz$x, xyz$y, xyz$z, radius = 0.75, col = c("pink","#009E73","#56B4E9","#E69F00", "black"))
+draw.pie(xyz$x, xyz$y, xyz$z, radius = 0.75)
 
 box(col="gray")
