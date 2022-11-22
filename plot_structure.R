@@ -17,7 +17,7 @@ n <- scan("names.txt", character())
 
 pdf("results.pdf")
 
-make.structure.plot(admix.proportions = m, sample.names = n, sort.by = 1)
+make.structure.plot(admix.proportions = m, sample.names = n)
 
 
 file2 <- list.files(path=my_dir, pattern="*.het", full.names=TRUE, recursive=FALSE)
