@@ -1,6 +1,7 @@
 library(conStruct)
 library(ggplot2)
 library(gridExtra)
+library(grid)
 
 
 my_dir <- getwd()
