@@ -49,7 +49,7 @@ pca3 <- ggplot(eigenvec, aes(x=PC2,y=PC3)) + geom_point(color="black") + theme_c
                   size = 0.3,
                   segment.color = 'grey50', max.overlaps = Inf)
 
-pca4 <-  ggplot(eigenval, aes(y=eigenval, x = c(1:10))) + geom_line() + theme_classic() + scale_x_continuous(breaks = c(1,2,3,4,5,6,7,8,9,10)) + xlab("Eigenvalue") + ylim(0,50)
+pca4 <-  ggplot(eigenval, aes(y=eigenval, x = c(1:10))) + geom_line() + theme_classic() + scale_x_continuous(breaks = c(1,2,3,4,5,6,7,8,9,10)) + xlab("Eigenvalue") + ylim(0,150)
 
 
 grid.arrange(pca1,pca2,pca3,pca4, ncol=2,top=textGrob("PCA"))
