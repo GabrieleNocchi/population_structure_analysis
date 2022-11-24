@@ -16,8 +16,8 @@ n <- scan("names.txt", character())
 
 
 pdf("results.pdf")
-
-make.structure.plot(admix.proportions = m, sample.names = n)
+COL <- c("#999999", "#E69F00", "#56B4E9", "#009E73","#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+make.structure.plot(admix.proportions = m, sample.names = n, sort.by = 2, layer.colors = COL)
 
 
 file2 <- list.files(path=my_dir, pattern="*.het", full.names=TRUE, recursive=FALSE)
@@ -35,16 +35,16 @@ eigenval <- read.table(file4)
 
 colnames(eigenvec) <- c("ID","PC1","PC2","PC3","PC4","PC5","PC6","PC7", "PC8", "PC9", "PC10")
 colnames(eigenval) <- c("eigenval")
-pca1 <- ggplot(eigenvec, aes(x=PC1,y=PC2)) + geom_point(color="#E69F00") + theme_classic() + ggtitle("PC1 vs PC2")  +
+pca1 <- ggplot(eigenvec, aes(x=PC1,y=PC2)) + geom_point(color="black") + theme_classic() + ggtitle("PC1 vs PC2")  +
   geom_text_repel(aes(label = ID),
                   size = 0.3,
                   segment.color = 'grey50', max.overlaps = Inf)
 
-pca2 <- ggplot(eigenvec, aes(x=PC1,y=PC3)) + geom_point(color="#E69F00") + theme_classic() + ggtitle("PC1 vs PC3")+
+pca2 <- ggplot(eigenvec, aes(x=PC1,y=PC3)) + geom_point(color="black") + theme_classic() + ggtitle("PC1 vs PC3")+
   geom_text_repel(aes(label = ID),
                   size = 0.3,
                   segment.color = 'grey50', max.overlaps = Inf)
-pca3 <- ggplot(eigenvec, aes(x=PC2,y=PC3)) + geom_point(color="#E69F00") + theme_classic() + ggtitle("PC2 vs PC3")+
+pca3 <- ggplot(eigenvec, aes(x=PC2,y=PC3)) + geom_point(color="black") + theme_classic() + ggtitle("PC2 vs PC3")+
   geom_text_repel(aes(label = ID),
                   size = 0.3,
                   segment.color = 'grey50', max.overlaps = Inf)
