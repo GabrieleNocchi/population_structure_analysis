@@ -25,7 +25,7 @@ do
 
 Rscript filterRelatedness.R
 
-bcftools view full_set.vcf.gz -S ^to_remove.txt -Ov -o no_relatedness.vcf
+/data/programs/bcftools-1.9/bcftools view full_set.vcf.gz -S ^to_remove.txt -Ov -o no_relatedness.vcf
 
 #VCF to plink format again for faststructure
 /data/programs/plink2 --vcf no_relatedness.vcf --allow-extra-chr --make-bed --out $FILE\_plink_data
