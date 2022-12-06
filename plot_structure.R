@@ -32,6 +32,7 @@ file4 <- list.files(path=my_dir, pattern="*eigenval", full.names=TRUE, recursive
 
 eigenvec <- read.table(file3)
 eigenval <- read.table(file4)
+eigenval <- eigenval/sum(eigenval)
 
 colnames(eigenvec) <- c("ID","PC1","PC2","PC3","PC4","PC5","PC6","PC7", "PC8", "PC9", "PC10")
 colnames(eigenval) <- c("eigenval")
