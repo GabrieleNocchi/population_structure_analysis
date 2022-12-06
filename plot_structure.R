@@ -17,7 +17,7 @@ n <- scan("names.txt", character())
 
 pdf("results.pdf")
 COL <- c("#999999", "#E69F00", "#56B4E9", "#009E73","#F0E442", "#0072B2", "#D55E00", "#CC79A7")
-make.structure.plot(admix.proportions = m, sample.names = n, sort.by = 2, layer.colors = COL)
+make.structure.plot(admix.proportions = m, sample.names = n, sort.by = 1, layer.colors = COL)
 
 
 file2 <- list.files(path=my_dir, pattern="*.het", full.names=TRUE, recursive=FALSE)
@@ -50,7 +50,7 @@ pca3 <- ggplot(eigenvec, aes(x=PC2,y=PC3)) + geom_point(color="black") + theme_c
                   size = 0.3,
                   segment.color = 'grey50', max.overlaps = Inf)
 
-pca4 <-  ggplot(eigenval, aes(y=eigenval, x = c(1:10))) + geom_line() + theme_classic() + scale_x_continuous(breaks = c(1,2,3,4,5,6,7,8,9,10)) + xlab("Eigenvalue") + ylim(0,150)
+pca4 <-  ggplot(eigenval, aes(y=eigenval, x = c(1:10))) + geom_line() + theme_classic() + scale_x_continuous(breaks = c(1,2,3,4,5,6,7,8,9,10)) + xlab("Eigenvalue") + ylim(0,1)
 
 
 grid.arrange(pca1,pca2,pca3,pca4, ncol=2,top=textGrob("PCA"))
