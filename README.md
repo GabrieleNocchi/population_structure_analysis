@@ -1,2 +1,3 @@
 # batch_structure_analysis
-just some scripts to run faststructure, pca and heterozygosity on multiple VCFs -- to be optimized
+Some scripts to run faststructure, pca and heterozygosity on multiple VCFs, and then plot them\
+No user friendly at all, as usual
