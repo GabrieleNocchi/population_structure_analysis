@@ -18,7 +18,7 @@ lat <- rep(coo$V6,1)
 xyz <- make.xyz(lon, lat, gabri,gabri_2)
 pdf("map.pdf")
 plot(countriesLow, xlim= c(min(coo$V7-5),max(coo$V7 + 5)), ylim = c(min(coo$V6-5),max(coo$V6+5)))
-COL <- c("#999999", "#E69F00", "#56B4E9", "#009E73","#F0E442", "#0072B2", "#D55E00", "#CC79A7", "black")
+COL <- c("#999999", "#E69F00", "#56B4E9", "#009E73","#F0E442", "#0072B2", "#D55E00", "#CC79A7", "black",)
 draw.pie(xyz$x, xyz$y, xyz$z, radius = 0.25, col = COL)
 box(col="gray")
 dev.off()
@@ -105,6 +105,7 @@ box(col="gray")
 dev.off()
 
 
+
 ### 5 Populations
 library(mapplots)
 library(rworldmap)
@@ -185,6 +186,34 @@ box(col="gray")
 dev.off()
 
 
+
+### 8 Populations
+library(mapplots)
+library(rworldmap)
+data(countriesLow)
+plot(countriesLow)
+coo <- read.table("sampling_data.csv", h = F, stringsAsFactors = F, row.names = NULL, sep = ",")
+my_dir <- getwd()
+file <- list.files(path=my_dir, pattern="*meanQ", full.names=TRUE, recursive=FALSE)
+a <- read.table(file)
+gabri <- cbind(a$V1,a$V2,a$V3,a$V4,a$V5,a$V6,a$V7,a$V8)
+gabri <- as.numeric(gabri)
+n <- length(a$V1)
+gabri_2 <- c(rep("pop1",n), rep("pop2", n), rep("pop3",n),rep("pop4",n),rep("pop5",n),rep("pop6",n),rep("pop7",n),rep("pop8",n))
+gabri_2 <- as.factor(gabri_2)
+lon <- rep(coo$V7,8)
+lat <- rep(coo$V6,8)
+# added extra digit to duplicate coordinates to avoid removal of records
+xyz <- make.xyz(lon, lat, gabri,gabri_2)
+pdf("map.pdf")
+plot(countriesLow, xlim= c(min(coo$V7-5),max(coo$V7 + 5)), ylim = c(min(coo$V6-5),max(coo$V6+5)))
+COL <- c("#999999", "#E69F00", "#56B4E9", "#009E73","#F0E442", "#0072B2", "#D55E00", "#CC79A7", "black")
+draw.pie(xyz$x, xyz$y, xyz$z, radius = 0.35, col = COL)
+box(col="gray")
+dev.off()
+
+
+
 ### 9 Populations
 library(mapplots)
 library(rworldmap)
@@ -206,6 +235,33 @@ xyz <- make.xyz(lon, lat, gabri,gabri_2)
 pdf("map.pdf")
 plot(countriesLow, xlim= c(min(coo$V7-5),max(coo$V7 + 5)), ylim = c(min(coo$V6-5),max(coo$V6+5)))
 COL <- c("#999999", "#E69F00", "#56B4E9", "#009E73","#F0E442", "#0072B2", "#D55E00", "#CC79A7", "black")
+draw.pie(xyz$x, xyz$y, xyz$z, radius = 0.35, col = COL)
+box(col="gray")
+dev.off()
+
+
+
+### 10 Populations
+library(mapplots)
+library(rworldmap)
+data(countriesLow)
+plot(countriesLow)
+coo <- read.table("sampling_data.csv", h = F, stringsAsFactors = F, row.names = NULL, sep = ",")
+my_dir <- getwd()
+file <- list.files(path=my_dir, pattern="*meanQ", full.names=TRUE, recursive=FALSE)
+a <- read.table(file)
+gabri <- cbind(a$V1,a$V2,a$V3,a$V4,a$V5,a$V6,a$V7,a$V8,a$V9,a$V10)
+gabri <- as.numeric(gabri)
+n <- length(a$V1)
+gabri_2 <- c(rep("pop1",n), rep("pop2", n), rep("pop3",n),rep("pop4",n),rep("pop5",n),rep("pop6",n),rep("pop7",n),rep("pop8",n),rep("pop9",n),rep("pop10",n))
+gabri_2 <- as.factor(gabri_2)
+lon <- rep(coo$V7,10)
+lat <- rep(coo$V6,1)
+# added extra digit to duplicate coordinates to avoid removal of records
+xyz <- make.xyz(lon, lat, gabri,gabri_2)
+pdf("map.pdf")
+plot(countriesLow, xlim= c(min(coo$V7-5),max(coo$V7 + 5)), ylim = c(min(coo$V6-5),max(coo$V6+5)))
+COL <- c("#999999", "#E69F00", "#56B4E9", "#009E73","#F0E442", "#0072B2", "#D55E00", "#CC79A7", "black", "brown")
 draw.pie(xyz$x, xyz$y, xyz$z, radius = 0.35, col = COL)
 box(col="gray")
 dev.off()
