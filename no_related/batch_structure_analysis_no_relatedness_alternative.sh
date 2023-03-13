@@ -16,19 +16,11 @@ do
 
 
 
-# VCF to plink format (bed, bim, fam)
+# VCF to plink format (bed, bim, fam) and remove related
 
-/data/programs/plink2 --vcf pruned.vcf --allow-extra-chr --make-bed --out $FILE\_plink_data
+/data/programs/plink --vcf pruned.vcf --allow-extra-chr --make-bed --double-id --rel-cutoff 0.2 --out $FILE\_plink_data
 
-# relatedness
-/data/programs/plink --bfile $FILE\_plink_data --genome --allow-extra-chr
 
-Rscript filterRelatedness.R
-
-/data/programs/bcftools-1.9/bcftools view pruned.vcf -S ^to_remove.txt -Ov -o no_relatedness.vcf
-
-#VCF to plink format again for faststructure
-/data/programs/plink2 --vcf no_relatedness.vcf --allow-extra-chr --make-bed --out $FILE\_plink_data
 
 # faststructure K from 1 to 10
 
@@ -46,11 +38,8 @@ python2.7 /lu213/gabriele.nocchi/fastStructure-master/structure.py -K 10 --input
 
 # quick and dirty PCA
 
-/data/programs/plink2 --vcf no_relatedness.vcf --pca 10 var-wts --allow-extra-chr --out $FILE\_pca
+/data/programs/plink2 --bfile $FILE\_plink_data --pca 10 var-wts --allow-extra-chr --out $FILE\_pca
 
-# Heterozygosity assessment
-
-/data/programs/vcftools_0.1.13/bin/vcftools --vcf no_relatedness.vcf --het --out $FILE\_heterozygosity
 
 
 rm *.vcf
