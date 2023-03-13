@@ -21,16 +21,16 @@ do
 
 # faststructure K from 1 to 10
 
-python /lu213/gabriele.nocchi/fastStructure-master/structure.py -K 1 --input=$FILE\_plink_data --output=$FILE\_fast_output --full --seed=100 
-python /lu213/gabriele.nocchi/fastStructure-master/structure.py -K 2 --input=$FILE\_plink_data --output=$FILE\_fast_output --full --seed=100 
-python /lu213/gabriele.nocchi/fastStructure-master/structure.py -K 3 --input=$FILE\_plink_data --output=$FILE\_fast_output --full --seed=100 
-python /lu213/gabriele.nocchi/fastStructure-master/structure.py -K 4 --input=$FILE\_plink_data --output=$FILE\_fast_output --full --seed=100 
-python /lu213/gabriele.nocchi/fastStructure-master/structure.py -K 5 --input=$FILE\_plink_data --output=$FILE\_fast_output --full --seed=100 
-python /lu213/gabriele.nocchi/fastStructure-master/structure.py -K 6 --input=$FILE\_plink_data --output=$FILE\_fast_output --full --seed=100 
-python /lu213/gabriele.nocchi/fastStructure-master/structure.py -K 7 --input=$FILE\_plink_data --output=$FILE\_fast_output --full --seed=100 
-python /lu213/gabriele.nocchi/fastStructure-master/structure.py -K 8 --input=$FILE\_plink_data --output=$FILE\_fast_output --full --seed=100 
-python /lu213/gabriele.nocchi/fastStructure-master/structure.py -K 9 --input=$FILE\_plink_data --output=$FILE\_fast_output --full --seed=100 
-python /lu213/gabriele.nocchi/fastStructure-master/structure.py -K 10 --input=$FILE\_plink_data --output=$FILE\_fast_output --full --seed=100
+python2.7 /lu213/gabriele.nocchi/fastStructure-master/structure.py -K 1 --input=$FILE\_plink_data --output=$FILE\_fast_output --full --seed=100 
+python2.7 /lu213/gabriele.nocchi/fastStructure-master/structure.py -K 2 --input=$FILE\_plink_data --output=$FILE\_fast_output --full --seed=100 
+python2.7 /lu213/gabriele.nocchi/fastStructure-master/structure.py -K 3 --input=$FILE\_plink_data --output=$FILE\_fast_output --full --seed=100 
+python2.7 /lu213/gabriele.nocchi/fastStructure-master/structure.py -K 4 --input=$FILE\_plink_data --output=$FILE\_fast_output --full --seed=100 
+python2.7 /lu213/gabriele.nocchi/fastStructure-master/structure.py -K 5 --input=$FILE\_plink_data --output=$FILE\_fast_output --full --seed=100 
+python2.7 /lu213/gabriele.nocchi/fastStructure-master/structure.py -K 6 --input=$FILE\_plink_data --output=$FILE\_fast_output --full --seed=100 
+python2.7 /lu213/gabriele.nocchi/fastStructure-master/structure.py -K 7 --input=$FILE\_plink_data --output=$FILE\_fast_output --full --seed=100 
+python2.7 /lu213/gabriele.nocchi/fastStructure-master/structure.py -K 8 --input=$FILE\_plink_data --output=$FILE\_fast_output --full --seed=100 
+python2.7 /lu213/gabriele.nocchi/fastStructure-master/structure.py -K 9 --input=$FILE\_plink_data --output=$FILE\_fast_output --full --seed=100 
+python2.7 /lu213/gabriele.nocchi/fastStructure-master/structure.py -K 10 --input=$FILE\_plink_data --output=$FILE\_fast_output --full --seed=100
 
 
 # quick and dirty PCA
